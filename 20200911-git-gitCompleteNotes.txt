@@ -1,0 +1,139 @@
+AVANCE CONFLICTING AND MERGE RESOLUTIONS
+
+WORKING DIRECTORY   ---->   STAGING AREA    ---->   REPOSITORY
+
+.:::::::: COMPARING WORKING DIRECTORY AND THE STAGING AREA ::::::::.
+
+$ git diff HEAD                 ----> revisa diferencias con mi ultimo commit
+$ git difftool HEAD             ----> muestra visualmente las diferencias si tienes instalado P4Merge
+$ git diff -- [archivo]         ----> muestra diferencia de un archivo en especifico
+$ git difftool -- README.md     ----> muestra diferencia de un archivo en especifico con p4merge
+
+
+
+.:::::::: COMPARING BETWEEN THE STAGING AREA AND THE GIT REPOSITORY ::::::::.
+
+$ git diff --staged HEAD
+$ git difftool --staged HEAD
+
+
+
+.:::::::: COMPARING BETWEEN COMMITS ::::::::.
+
+$ git log --oneline               ----> muestra log en una linea
+$ git difftool 13b6bda HEAD       ----> muestra diferencias entre un commit y el ultimo commit
+$ git difftool HEAD HEAD^         ----> muestra la diferencia entre el ultimo y el penultimo cambio
+$ git diff e3ed52f 8f0cb8e        ----> muestra la diferencia entre commits
+
+
+
+
+
+.:::::::: COMPARING BETWEEN LOCAL AND REMOTE MASTER BRANCHES ::::::::.
+
+
+local repository    remote repository
+master              origin/master
+(@HEAD)             (GitHub)
+
+
+$ git diff master origin/master
+$ git difftool master origin/master
+
+
+
+
+.:::::::: BRANCHING AND MERGING ::::::::.
+
+$ git branch                            ----> muestra los branches locales
+$ git branch -a                         ----> muestra los branches locales y los remotos
+$ git branch [nombre-nuevo-branch]      ----> crea un nuevo branch
+$ git checkout [nombre-branch]          ----> cambia de branch
+$ git branch -m mynewbranch newbranch   ----> cambiar nombre a los branch
+$ git branch -d newbranch               ----> borra un branch
+
+
+
+.:::::::: FAST FORWARD MERGE OR HAPPY PATH ::::::::.
+
+Cuando no existen conflictos entre archivos
+
+$ git checkout -b title-change          ----> crea un branch y te posiciona en ese branch
+$ git diff master title-change          ----> diferencias entre branches
+$ git merge title-change                ----> hace merge entre la rama en la que estas ubicado con la rama que se le indica
+$ git log --oneline --graph --decorate  ----> from mas visual de ver los commits del repositorio
+$ git merge add-copyright --no-ff       ----> Hace el merge pero no en automatico.
+
+
+
+.:::: automatic merges ::::.
+
+git merge simple-changes -m "Merge changes from simple changes branch"
+
+
+
+.:::: CONFLICTING MERGES AND RESOLUTION ::::.
+
+$ git merge realwork                    ----> merge entre repositorio ubicado y en este caso el branch de realwork
+$ git mergetool                         ----> merge con herramienta visual p4merge
+
+
+
+.:::: REBASE ::::.
+
+$ git rebase [nombre-rama]
+
+
+.:::: ABORT REBASE ::::.
+
+$ git rebase --abort                    ----> si hiciste un rebase y hay conflictos y quieres deshacer los cambios que hayan provocado ese conflicto
+
+
+.:::: SIMPLE STASH EXAMPLE ::::.
+
+$ git stash                             ----> envia a stash archivos modificados
+$ git stash apply                       ----> trae de vuelta los archivos que estan en stash
+$ git stash list                        ----> muestra lista de stash
+$ git stash drop                        ----> elimina un stash
+$ git stash -u                          ----> agrega al stash los archivos que aun no estan trackeados por git 
+
+
+
+.:::: TAGGING ::::.
+
+They are labels in the repository history
+$ git tag myTag                         ----> agrega un tag
+$ git tag --list                        ----> muestra la lista de tags
+$ git show myTag                        ----> muestra los cambios hechos en ese commit
+$ git tag --delete myTag                ----> borra tag
+
+
+.:::: ANNOTATED TAGS ::::.
+annotated tag is a normal tag wit a little more information
+
+
+$ git tag -a v-1.0                      ---> after adding the tag you can add a information message
+
+
+.:::: COMPARING TAGS ::::.
+
+$ git tag --list                          ----> Te da lista de tags
+$ git diff [tag1] [tag2]                  ----> Comparar tags
+$ git difftool [tag1][tag2]               ----> compara tags con p4merge
+
+
+
+.:: TAGGING A SPECIFIC COMMIT ::.
+
+$ git tag -a [nombre-tag] [commit]        ----> agrega tag a un commit especifico 
+
+
+.:: UPDATING TAGS ::.
+
+git tag -a [nombre-tag-existente] -f [commit-al-que-deseas-trasladarlo]             ---->  actualizar un tag y moverlo a diferente commit
+
+
+.:: USING TAGS WITH GITHUB ::.
+
+$ git push origin master --tags             ----> Envia tag faltantes al repositorio remoto
+$ git push origin :[nombre-tag]             ----> Elimina tag remoto 
