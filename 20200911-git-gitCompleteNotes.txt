@@ -1,3 +1,105 @@
+==================================================================
+COMANDOS
+==================================================================
+git version                                     ----> Te muestra la version que tienes instalada de GIT
+git config --global user.name                   ----> Que usuario usamos en GIT
+git config --global user.email                  ----> Que correo usamos en GIT
+git config --global --list                      ----> Usuario y correo que usamos en GIT
+git clone [url-repository]                      ----> Clonar repositorio
+git status                                      ----> Te muestra el estado de tus archivos en tu repositorio
+git add [nombre-archivo]                        ----> Te agrega el archivo a STAGING AREA
+git commit -m "[que hiciste en este commit]"    ----> Agrega el archivo al repositorio local
+git pull origin master                          ----> Baja los cambios que existan en el repositorio remoto.
+git push origin master                          ----> Sube cambios al repositorio remoto 
+
+==================================================================
+GIT VERSION
+==================================================================
+
+git version
+
+==================================================================
+COMO SABER QUE USUARIO Y CORREO DE GIT ESTAMOS USANDO Y COMO ASIGNARLO
+==================================================================
+git config --global user.name       //que usuario usamos
+git config --global user.email       //que correo usamos
+git config --global --list           //usuario y correo que usamos
+
+
+git config --global user.name "Odin Araujo Barragan"       //como asignar usuario
+git config --global user.email "odin.araujo@gmail.com"       //como asignar correo
+
+==================================================================
+CLONAR REPOSITORIO
+==================================================================
+
+git clone https://github.com/prezlincoln/github-demo
+
+==================================================================
+
+==================================================================
+
+
+
+
+
+==================================================================
+INICIALIZAR PROYECTO
+==================================================================
+
+git init [nombre-proyecto]
+    Creara un directorio con el nombre del proyecto y dentro de el una carpeta .git indicando que length
+    dara seguimiento a todos los que cambios que se efectuen en ese directorio.
+
+
+==================================================================
+ESTATUS DEL PROYECTO
+==================================================================
+
+git status
+
+==================================================================
+ADDING FILE IN A STAGING AREA 
+==================================================================
+
+git add [nombre-archivo-con-extension]
+
+==================================================================
+DELETE GIT REPOSITORY 
+==================================================================
+
+rm -rf [nombre-proyecto]/
+
+Esta instruccion borra la carpeta , no es un comando git es un comando de terminal
+
+==================================================================
+GIT COMMIT 
+==================================================================
+
+git commit -m "Este es un mensaje para el commit"
+
+==================================================================
+BORRAR GIT DE TU PROYECTO 
+==================================================================
+
+Vas al directorio de tu proyecto y borras la carpeta .git
+
+rm -rf .git
+
+
+FORK
+
+El fork que nos permite hacer GitHub es muy similar a lo descrito anteriormente con la ventaja de que en lugar de clonar 
+el repositorio de forma local, podremos crear una copia en remoto del proyecto que queremos y quedara almacenada en nuestra 
+cuenta personal de GitHub.
+
+
+git push origin master
+
+origin      ---->   nombre del repositorio remoto
+master      ---->   nombre del branch al que se va a subir
+
+
 AVANCE CONFLICTING AND MERGE RESOLUTIONS
 
 WORKING DIRECTORY   ---->   STAGING AREA    ---->   REPOSITORY
