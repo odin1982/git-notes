@@ -153,6 +153,7 @@ $ git branch [nombre-nuevo-branch]      ----> crea un nuevo branch
 $ git checkout [nombre-branch]          ----> cambia de branch
 $ git branch -m mynewbranch newbranch   ----> cambiar nombre a los branch
 $ git branch -d newbranch               ----> borra un branch
+$ git push origin [nombre-barnch]       ----> subir al repositorio remoto un branch
 
 
 
