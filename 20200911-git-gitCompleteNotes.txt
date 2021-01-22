@@ -240,3 +240,7 @@ git tag -a [nombre-tag-existente] -f [commit-al-que-deseas-trasladarlo]         
 
 $ git push origin master --tags             ----> Envia tag faltantes al repositorio remoto
 $ git push origin :[nombre-tag]             ----> Elimina tag remoto 
+
+
+## COMO DESHACER EL ULTIMO COMMIT CON GIT
+https://midu.dev/como-deshacer-el-ultimo-commit-git/
