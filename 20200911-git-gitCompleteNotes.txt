@@ -147,13 +147,14 @@ $ git difftool master origin/master
 
 .:::::::: BRANCHING AND MERGING ::::::::.
 
-$ git branch                            ----> muestra los branches locales
-$ git branch -a                         ----> muestra los branches locales y los remotos
-$ git branch [nombre-nuevo-branch]      ----> crea un nuevo branch
-$ git checkout [nombre-branch]          ----> cambia de branch
-$ git branch -m mynewbranch newbranch   ----> cambiar nombre a los branch
-$ git branch -d newbranch               ----> borra un branch
-$ git push origin [nombre-barnch]       ----> subir al repositorio remoto un branch
+$ git branch                                    ----> muestra los branches locales
+$ git branch -a                                 ----> muestra los branches locales y los remotos
+$ git branch [nombre-nuevo-branch]              ----> crea un nuevo branch
+$ git checkout [nombre-branch]                  ----> cambia de branch
+$ git branch -m mynewbranch newbranch           ----> cambiar nombre a los branch
+$ git branch -d newbranch                       ----> borra un branch
+$ git push origin [nombre-barnch]               ----> subir al repositorio remoto un branch
+$ git push origin --delete [nombre-branch]      ----> borra el branch remoto 
 
 
 
