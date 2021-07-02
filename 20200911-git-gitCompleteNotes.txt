@@ -157,6 +157,12 @@ $ git push origin [nombre-barnch]               ----> subir al repositorio remot
 $ git push origin --delete [nombre-branch]      ----> borra el branch remoto 
 
 
+.:::::::: DOWNLOAD REMOTE BRANCH FROM REMOTE REPOSITORY ::::::::.
+In master repository
+$ git fetch
+$ git checkout -b yourSecondBranch origin/yourSecondBranch 
+# or simpler, since git 1.6+:
+$ git checkout yourSecondBranch
 
 .:::::::: FAST FORWARD MERGE OR HAPPY PATH ::::::::.
 
